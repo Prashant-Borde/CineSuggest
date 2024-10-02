@@ -12,7 +12,6 @@ from flask_caching import Cache
 import requests
 from bs4 import BeautifulSoup
 
-
 # Initialize Flask app
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Change this to a strong secret key
