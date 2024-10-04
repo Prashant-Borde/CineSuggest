@@ -18,13 +18,10 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Change this to a strong secret key
 
 
-
 # Configure caching
 app.config['CACHE_TYPE'] = 'simple'  # Simple in-memory cache
 app.config['CACHE_DEFAULT_TIMEOUT'] = 3000  # Default cache timeout (in seconds)
 cache = Cache(app)
-
-
 
 
 def login_required(f):
@@ -35,8 +32,6 @@ def login_required(f):
             return redirect(url_for('login'))
         return f(*args, **kwargs)
     return decorated_function
-
-
 
 
 
