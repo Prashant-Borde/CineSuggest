@@ -25,6 +25,8 @@ app.config['CACHE_DEFAULT_TIMEOUT'] = 3000  # Default cache timeout (in seconds)
 cache = Cache(app)
 
 
+
+
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -33,6 +35,8 @@ def login_required(f):
             return redirect(url_for('login'))
         return f(*args, **kwargs)
     return decorated_function
+
+
 
 
 
